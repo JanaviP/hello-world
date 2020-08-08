@@ -1,0 +1,31 @@
+print("Welcome to the Lottery")
+print ("The numbers for today are...")
+
+import random
+list=[]
+for i in range(6):
+  r=random.randint(1,49)
+  if r not in list: list.append(r)
+  print(int(r))
+
+
+import sys
+from time import sleep
+
+words = "And a bonus ball..."
+for char in words:
+    sleep(0.1)
+    sys.stdout.write(char)
+    sys.stdout.flush()
+    
+import time 
+time.sleep(1)
+
+
+for i in range(1):
+  r=random.randint(1,49)
+  if r not in list: list.append(r)
+  print(int(r))
+
+
+https://repl.it/@JP987/ThoughtfulFilthyPayware#main.py
