@@ -1,0 +1,49 @@
+import random
+
+lotteryNumbers = []
+
+for i in range (0,6):
+  number = random.randint(1,49)
+  while number in lotteryNumbers:
+    number = random.randint(1,49)
+  
+  lotteryNumbers.append(number)
+
+lotteryNumbers.sort()
+
+userNumbers = []
+for i in range(0,7):
+  number = int(input("Please enter a number between 1 and 49"))
+  while (number in userNumbers or number<1 or number>49):
+    print("invalid number please try again")
+    number = int(input("Please enter a number between 1 and 49"))
+  
+  userNumbers.append(number)
+
+
+print("Today's lottery numbers are: ") 
+print(lotteryNumbers)
+
+
+
+bonusball=random.randint(1,49)
+
+while bonusball in lotteryNumbers:
+  bonusball = random.randint(1,49)
+print("The bonus ball of today is...")
+print(bonusball)
+
+print("So the final numbers are:")
+print(lotteryNumbers,"and" ,bonusball)
+
+print("Your Numbers:")
+print(userNumbers)
+
+counter =0
+for number in userNumbers:
+  if number in lotteryNumbers:
+    counter+=1
+
+print("You have " +str(counter)+" right guess/es")
+probability=counter/49
+print("The probability of your guesses is", probability )
